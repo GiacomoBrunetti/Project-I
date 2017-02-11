@@ -2,10 +2,17 @@ body {
   text-align: center;
 }
 
+div.score {
+  color: white;
+  text-align: center;
+  float: right;
+  background-color: dodgerblue;
+}
+
 h1 {
   color: black;
   font-size: 30px;
-  margin-top: 100px;
+  margin-top: 0px;
 }
 
 section {
@@ -24,13 +31,23 @@ div {
 }
 
 div.cat {
-  background-image: url(../images/cutecat.gif);
+  background-image: url(../images/Cat.jpg);
   background-size: cover;
 }
+
+div.dog {
+  background-image: url(../images/falling-dog.jpg);
+  background-size: cover;
+}
+
  div.lives {
    color: red;
    text-align: center;
    width: 400px;
    font-size: 20px;
    margin: 0 auto;
+ }
+ div.net {
+   background-image: url(../images/net.jpg);
+   background-size: cover;
  }
