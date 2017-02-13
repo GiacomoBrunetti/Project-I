@@ -52,18 +52,22 @@ div.cat {
 
 div.dog {
   background-image: url(../images/doneDog.gif);
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 
+}
+ul {
+  display: none;
 }
 
  div.lives {
    background-color: rgba(255, 255, 255,0);
    color: red;
    text-align: center;
-   width: 400px;
+   width: 20px;
    font-size: 40px;
+   bottom: 50px;
    margin: 0 auto;
-   float: right;
 
  }
 

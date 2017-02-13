@@ -66,28 +66,23 @@ $(() => {
   console.log(divNumber);
 
   $play.on('click', () => {
-
     generateAnimal();
     fallOne();
-
   });
 
   // Make the animal fall
-  let falltime = 200;
+  let falltime = 250;
 
   function fallOne() {
     // if (livesNumber>=0){
-    if (falltime>= 100){
+    if (falltime>= 150){
       falltime--;
     }
     setTimeout(() => {
-
       if (divNumber <= 41) {
         if (className==='cat'){
           $(`.box${divNumber}`).removeClass('cat');
-
           divNumber += 6;
-
           $(`.box${divNumber}`).addClass('cat');
           // console.log('fallOne', divNumber);
           fallOne();
@@ -104,7 +99,6 @@ $(() => {
         fallOne();
       }
     }, falltime);
-      // console.log('end'+ divNumber);
   }
 
   function checkCatch() {
@@ -120,16 +114,9 @@ $(() => {
         $byeLife.play();
         livesNumber.pop();
         $lives.html(livesNumber);
+        console.log(livesNumber.length);
 
     } ($(`.box${divNumber}`).removeClass('cat dog'));
   }
-
-  // function removeLife() {
-  //   if (checkCatch === false){
-  //     livesNumber.pop();
-  //     $lives.html(livesNumber);
-  //   }
-  // }
-  //
 
 });
