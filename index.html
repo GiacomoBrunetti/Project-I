@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-
+<header>
   <h1>It's Raining Cats and Dogs!</h1>
 
-  <button type="button" name="button">Play!</button>
+</header>
+
+<button type="button" name="button" id="play">Play!</button>
+<button type="button" name="button" id="stop">Stop Music</button>
 
   <div class="score"></div>
 
@@ -46,13 +49,38 @@
     <div class="box27"></div>
     <div class="box28"></div>
     <div class="box29"></div>
-    <div class="box30 net" id="30"></div>
-    <div class="box31" id="31"></div>
-    <div class="box32" id="32"></div>
-    <div class="box33" id="33"></div>
-    <div class="box34" id="34"></div>
-    <div class="box35" id="35"></div>
+    <div class="box30"></div>
+    <div class="box31"></div>
+    <div class="box32"></div>
+    <div class="box33"></div>
+    <div class="box34"></div>
+    <div class="box35"></div>
+    <div class="box36"></div>
+    <div class="box37"></div>
+    <div class="box38"></div>
+    <div class="box39"></div>
+    <div class="box40"></div>
+    <div class="box41"></div>
+    <div class="box42 net"></div>
+    <div class="box43"></div>
+    <div class="box44"></div>
+    <div class="box45"></div>
+    <div class="box46"></div>
+    <div class="box47"></div>
   </section>
-  <div class="lives"> Lives: </div>
+  <div class="lives"><ul>
+  <li>&hearts;</li>
+  <li>&hearts;</li>
+  <li>&hearts;</li>
+  <li>&hearts;</li>
+  <li>&hearts;</li>
+  <li>&hearts;</li>
+  <li>&hearts;</li>
+  <li>&hearts;</li>
+  <li>&hearts;</li>
+</ul></div>
+  <audio src="audios/Bucky O'Hare - Red Planet.mp3" id="soundtrack" type="audio/mp3" autoplay loop></audio>
+  <audio src="audios/Pling.mp3" id="caught" type="audio/mp3"></audio>
+  <audio src="audios/Blop.mp3" id="lifeLost" type="audio/mp3"></audio>
   </body>
 </html>
