@@ -2,6 +2,7 @@ $(() => {
   console.log('all working boss');
   let divNumber = null;
   let className = null;
+  const $gameOver = $('.gameOver');
   const $caught = $('#caught').get(0);
   const $byeLife = $('#lifeLost').get(0);
   const $divs = $('div');
@@ -11,27 +12,64 @@ $(() => {
   const $lives = $('.lives');
   const $score = $('.score');
   const $section = $('section');
+  const $left = $('#left');
+  const $right = $('#right');
+  const $h1 = $('h1');
+  const $h2 = $('h2');
+  const $playBtn = $('#play');
+  const $button = $('button');
   let score = 0;
   const livesNumber = ['&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;'];
   let x = 0;
   console.log(livesNumber.length);
+
+  //detect if mobile, if so show buttons
+  detectmob();
+  if (document.body.className==='touch') {
+    $left.show();
+    $right.show();
+    screen.lockOrientation('landscape');
+
+  } else {
+    $left.hide();
+    $right.hide();
+  }
+
+  $right.on('click', () => {
+    if (x < 5) {
+      console.log('pressed right');
+      x= x+1;
+      $('.box'+ (42+x)).addClass('net');
+      $('.box'+ (42+x-1)).removeClass('net');
+      console.log(x);
+    }
+  });
+
+  $left.on('click', ()=> {
+
+  });
+
+  $lives.html(livesNumber);
+  $gameOver.hide();
   $section.hide();
   $divs.hide();
   $score.hide();
   $play.focus();
+
   $play.on('click', ()=> {
+    $('html, body').animate({ scrollTop: $(document).height() }, 2000);
     $section.show();
     $divs.show();
     $score.show();
     $play.hide();
     $stopTrack.hide();
   });
+
   $stopTrack.on('click', () => {
     $RedPlanet.pause();
   });
 
-  $lives.html(livesNumber);
-//move net function
+  //move net function
   $('body').keydown(function(e) {
 
       //keypress rigth moves right
@@ -51,7 +89,7 @@ $(() => {
         $('.box'+ (42+x)).addClass('net');
         $('.box'+ (42+x+1)).removeClass('net');
         console.log(x);
-        // console.log(x);
+
       }
     }
 
@@ -74,31 +112,38 @@ $(() => {
   let falltime = 250;
 
   function fallOne() {
+    if (livesNumber.length>0) {
     // if (livesNumber>=0){
-    if (falltime>= 150){
-      falltime--;
-    }
-    setTimeout(() => {
-      if (divNumber <= 41) {
-        if (className==='cat'){
-          $(`.box${divNumber}`).removeClass('cat');
-          divNumber += 6;
-          $(`.box${divNumber}`).addClass('cat');
-          // console.log('fallOne', divNumber);
-          fallOne();
+      if (falltime>= 100){
+        falltime--;
+      }
+      setTimeout(() => {
+        if (divNumber <= 41) {
+          if (className==='cat'){
+            $(`.box${divNumber}`).removeClass('cat');
+            divNumber += 6;
+            $(`.box${divNumber}`).addClass('cat');
+            // console.log('fallOne', divNumber);
+            fallOne();
+          } else {
+            $(`.box${divNumber}`).removeClass('dog');
+            divNumber += 6;
+            $(`.box${divNumber}`).addClass('dog');
+            // console.log('fallOne', divNumber);
+            fallOne();
+          }
         } else {
-          $(`.box${divNumber}`).removeClass('dog');
-          divNumber += 6;
-          $(`.box${divNumber}`).addClass('dog');
-          // console.log('fallOne', divNumber);
+          checkCatch();
+          generateAnimal();
           fallOne();
         }
-      } else {
-        checkCatch();
-        generateAnimal();
-        fallOne();
-      }
-    }, falltime);
+      }, falltime);
+    } else {
+      ($(`.box${divNumber}`).removeClass('cat dog'));
+      $gameOver.show();
+      $section.hide();
+      $divs.hide();
+    }
   }
 
   function checkCatch() {
@@ -114,9 +159,17 @@ $(() => {
         $byeLife.play();
         livesNumber.pop();
         $lives.html(livesNumber);
+        $lives.addClass('ringing');
         console.log(livesNumber.length);
 
     } ($(`.box${divNumber}`).removeClass('cat dog'));
+    $lives.removeClass('ringing');
   }
 
+  function detectmob() {
+    if(('ontouchstart' in window)||(navigator.maxTouchPoints > 0)||(navigator.msMaxTouchPoints > 0))
+      document.body.className='touch';
+    else
+    document.body.className='no-touch';
+  }
 });
