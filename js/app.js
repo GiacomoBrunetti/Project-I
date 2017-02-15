@@ -17,27 +17,11 @@ $(() => {
   const $left = $('#left');
   const $right = $('#right');
   let score = 0;
+  let g = 1;
   let falltime = 250;
   const livesNumber = ['&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;'];
   let x = 0;
   console.log(livesNumber.length);
-
-  //detect mobile, if so show buttons
-  // detectmob();
-  // if (document.body.className==='touch') {
-  //   $left.show();
-  //   $right.show();
-  //   screen.orientation.lock('landscape');
-  //   $gameOver.hide();
-  //   $section.hide();
-  //   $divs.hide();
-  //   $score.hide();
-  //   $article.hide();
-  //
-  // } else {
-  //   $left.hide();
-  //   $right.hide();
-  // }
 
   $right.on('click', () => {
     if (x < 5) {
@@ -83,7 +67,7 @@ $(() => {
 
 
   $gameOver.on('mouseover', ()=>{
-    $gameOver.text(`Your score is: ${score}`);
+    $gameOver.text(`${score}`);
   });
   $gameOver.on('mouseout', ()=>{
     $gameOver.text('Game Over');
@@ -91,7 +75,15 @@ $(() => {
 
 
   $stopTrack.on('click', () => {
-    $RedPlanet.pause();
+    if ( g%2 !== 0){
+      $RedPlanet.pause();
+      $stopTrack.html('Play music');
+      g+=1;
+    } else {
+      $RedPlanet.play();
+      $stopTrack.html('Stop music');
+      g+=1;
+    }console.log(g);
   });
 
   //move net function
@@ -121,10 +113,7 @@ $(() => {
     $(`.box${divNumber}`).addClass(className);
   }
 
-
-
   // Make the animal fall
-
   function fallOne() {
     if (livesNumber.length>0) {
       if (falltime>= 100){
@@ -173,12 +162,6 @@ $(() => {
     } ($(`.box${divNumber}`).removeClass('cat dog'));
   }
 
-  // function detectmob() {
-  //   if(('ontouchstart' in window)||(navigator.maxTouchPoints > 0)||(navigator.msMaxTouchPoints > 0))
-  //     document.body.className='touch';
-  //   else
-  //   document.body.className='no-touch';
-  // }
   $playAgain.on('click', () => {
     console.log('click');
     $section.show();
@@ -190,8 +173,6 @@ $(() => {
     $stopTrack.hide();
     $gameOver.hide();
     $playAgain.hide();
-  });
-  $playAgain.on('click', () => {
     generateAnimal();
     fallOne();
   });

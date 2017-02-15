@@ -126,7 +126,7 @@ div.score {
  margin-right: 20px;
 }
 div.net {
- background-image: url(../images/handmeh.png);
+ background-image: url(../images/portal.gif);
  background-size: cover;
 }
 
@@ -151,33 +151,42 @@ div.net {
 }
 
 /*mobile corrections*/
-/*@media screen
-  and (device-width: 320px)
-  and (device-height: 640px)
-  and (-webkit-device-pixel-ratio: 3) {
+@media only screen and (max-width: 640px) {
 
     header {
-      height: 33px;
+      height: 150px;
     }
     h1 {
-      font-size: 15px;
+      height: 150px;
+      font-size: 30px;
     }
     h2 {
-      height: 33px;
-      width: 33px;
-      font-size: 15px;
-      margin: 17px auto;
-    }
-    button {
-      font-size: 40px;
-      margin: 200px auto;
+      font-size: 20px;
+      margin: 100px auto;
     }
     button#play {
-      margin-left: 17px;
+      font-size: 40px;
+      margin: 80px;
+    }
+    button#stop {
+      font-size: 25px;
+      margin: 80px;
     }
     article{
       height: 600px;
     }
+    section {
+      top: 70%;
+    }
+    button#playAgain{
+      margin-bottom: 200px;
+      font-size: 25px;
+    }
+    div.lives {
+      font-size: 30px;
+    }
+    div.score {
+      font-size: 30px;
+    }
 
-
-}*/
+}
