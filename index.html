@@ -2,6 +2,8 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Project I</title>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
     <script src="js/app.js" charset="utf-8"></script>
@@ -9,78 +11,80 @@
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
   </head>
   <body>
-<header>
-  <h1>It's Raining Cats and Dogs!</h1>
+    <header>
+      <h1>It's Raining Cats and Dogs!</h1>
 
-</header>
+    </header>
 
-<button type="button" name="button" id="play"><a href="#bottom">Play!</a></button>
-<button type="button" name="button" id="stop">Stop Music</button>
-<h2 class="gameOver">Game Over</h2>
+    <button type="button" name="button" id="play"><a href="#bottom">Play!</a></button>
+    <button type="button" name="button" id="stop">Stop Music</button>
+    <h2 class="gameOver" id="gameOver">Game Over</h2>
+    <button type="button" name="button" id="playAgain">Play Again!</button>
 
-<article class="rain">
+    <article>
 
-  <section class="gameboard" id="game">
-    <div class="box0"></div>
-    <div class="box1"></div>
-    <div class="box2"></div>
-    <div class="box3"></div>
-    <div class="box4"></div>
-    <div class="box5"></div>
-    <div class="box6"></div>
-    <div class="box7"></div>
-    <div class="box8"></div>
-    <div class="box9"></div>
-    <div class="box10"></div>
-    <div class="box11"></div>
-    <div class="box12"></div>
-    <div class="box13"></div>
-    <div class="box14"></div>
-    <div class="box15"></div>
-    <div class="box16"></div>
-    <div class="box17"></div>
-    <div class="box18"></div>
-    <div class="box19"></div>
-    <div class="box20"></div>
-    <div class="box21"></div>
-    <div class="box22"></div>
-    <div class="box23"></div>
-    <div class="box24"></div>
-    <div class="box25"></div>
-    <div class="box26"></div>
-    <div class="box27"></div>
-    <div class="box28"></div>
-    <div class="box29"></div>
-    <div class="box30"></div>
-    <div class="box31"></div>
-    <div class="box32"></div>
-    <div class="box33"></div>
-    <div class="box34"></div>
-    <div class="box35"></div>
-    <div class="box36"></div>
-    <div class="box37"></div>
-    <div class="box38"></div>
-    <div class="box39"></div>
-    <div class="box40"></div>
-    <div class="box41"></div>
-    <div class="box42 net"></div>
-    <div class="box43"></div>
-    <div class="box44"></div>
-    <div class="box45"></div>
-    <div class="box46"></div>
-    <div class="box47"></div>
-  </section>
+      <section class="gameboard" id="game">
+        <div class="box0"></div>
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+        <div class="box4"></div>
+        <div class="box5"></div>
+        <div class="box6"></div>
+        <div class="box7"></div>
+        <div class="box8"></div>
+        <div class="box9"></div>
+        <div class="box10"></div>
+        <div class="box11"></div>
+        <div class="box12"></div>
+        <div class="box13"></div>
+        <div class="box14"></div>
+        <div class="box15"></div>
+        <div class="box16"></div>
+        <div class="box17"></div>
+        <div class="box18"></div>
+        <div class="box19"></div>
+        <div class="box20"></div>
+        <div class="box21"></div>
+        <div class="box22"></div>
+        <div class="box23"></div>
+        <div class="box24"></div>
+        <div class="box25"></div>
+        <div class="box26"></div>
+        <div class="box27"></div>
+        <div class="box28"></div>
+        <div class="box29"></div>
+        <div class="box30"></div>
+        <div class="box31"></div>
+        <div class="box32"></div>
+        <div class="box33"></div>
+        <div class="box34"></div>
+        <div class="box35"></div>
+        <div class="box36"></div>
+        <div class="box37"></div>
+        <div class="box38"></div>
+        <div class="box39"></div>
+        <div class="box40"></div>
+        <div class="box41"></div>
+        <div class="box42 net"></div>
+        <div class="box43"></div>
+        <div class="box44"></div>
+        <div class="box45"></div>
+        <div class="box46"></div>
+        <div class="box47"></div>
+      </section>
 
-  <button type="button" name="left" id="left" >Left</button>
-  <button type="button" name="right" id="right">Right</button>
+      <button type="button" name="left" id="left" ></button>
+      <button type="button" name="right" id="right"></button>
 
-
-  <div class="score"></div>
-  <div class="lives" id="#lives"></div>
-</article>
-  <audio src="audios/Bucky O'Hare - Red Planet.mp3" id="soundtrack" type="audio/mp3" autoplay loop></audio>
-  <audio src="audios/Pling.mp3" id="caught" type="audio/mp3"></audio>
-  <audio src="audios/Blop.mp3" id="lifeLost" type="audio/mp3"></audio>
+    </article>
+    <footer>
+      <div class="score">0</div>
+      <div class="lives" id="#lives"></div>
+    </footer>
+    <audio src="audios/Bucky O'Hare - Red Planet.mp3" id="soundtrack" type="audio/mp3" autoplay loop></audio>
+    <audio src="audios/Pling.mp3" id="caught" type="audio/mp3"></audio>
+    <audio src="audios/Blop.mp3" id="lifeLost" type="audio/mp3"></audio>
 
   </body>
 </html>

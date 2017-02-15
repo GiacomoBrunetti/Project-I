@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  background-image: url(../images/landscape.png);
+  background-image: url(../images/waterfall.gif);
   background-size: cover;
   background-repeat: no-repeat;
   height: auto;
@@ -16,7 +16,7 @@ header {
 
 h1 {
   font-family: 'Permanent Marker', cursive;
-  color: black;
+  color: #26bf76;
   font-size: 40px;
   margin-top: 0px;
   position: absolute;
@@ -26,32 +26,29 @@ h1 {
 }
 
 h2 {
+  color: #26bf76;
   font-family: 'Permanent Marker', cursive;
-  height: 200px;
+  height: 50px;
   width: 200px;
   font-size: 30px;
-  margin: 100px auto;
-  background-image: url(../images/flipped-clouds.png);
-  background-size: contain;
+  margin: 20px auto;
   background-color: rgba(255, 255, 255,0);
-  background-repeat: no-repeat;
-}
-
-button {
-  font-family: 'Permanent Marker', cursive;
-  border-radius: 50px;
-  border: 0px;
-  font-size: 30px;
-  margin: 100px auto;
-  background-image: url(../images/flipped-clouds2.png);
-  background-size: contain;
-  background-color: rgba(255, 255, 255,0);
-  background-repeat: no-repeat;
 }
 
 button#play {
   margin-right: 50px;
 }
+
+button {
+  color: #26bf76;
+  font-family: 'Permanent Marker', cursive;
+  border-radius: 50px;
+  border: 0px;
+  font-size: 30px;
+  margin: 100px auto;
+  background-color: rgba(255, 255, 255,0);
+}
+
 
 button:hover {
   color: white;
@@ -63,22 +60,28 @@ button:focus {
 
 a {
   font-family: 'Permanent Marker', cursive;
-  color: black;
+  color: #26bf76;
   text-decoration: none;
 }
 a:hover {
   color: white;
 }
+article {
+  text-align: center;
+  height: 450px;
+  width: auto;
+  /*position: relative;*/
+}
 section {
+  margin-top: 150px;
   background-color: rgba(255, 255, 255,0);
-  margin: 10px auto;
+  margin-bottom: 10px;
   height: 410px;
   width: 310px;
-  margin-bottom: 100px;
-}
-article {
-  background-image: url(../images/rain.gif);
-  background-size: contain;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 div {
@@ -98,68 +101,55 @@ div.dog {
   background-image: url(../images/doneDog.gif);
   background-size: contain;
   background-repeat: no-repeat;
-
 }
 
- div.lives {
-   background-color: rgba(255, 255, 255,0);
-   color: red;
-   text-align: center;
-   width: auto;
-   font-size: 50px;
-   bottom: 50px;
-   margin: 0 auto;
+footer {
+  margin-bottom: 20px;
+  text-align: center;
+}
+div.lives {
+ background-color: rgba(255, 255, 255,0);
+ color: red;
+ text-align: center;
+ width: auto;
+ font-size: 50px;
+ bottom: 50px;
+ margin: 0 auto;
+}
 
- }
+div.score {
+ font-size: 50px;
+ font-family: 'Permanent Marker', cursive;
+ color: white;
+ text-align: center;
+ background-color: rgba(255, 255, 255,0);
+ margin-right: 20px;
+}
+div.net {
+ background-image: url(../images/handmeh.png);
+ background-size: cover;
+}
 
- div.score {
-   font-size: 50px;
-   font-family: 'Permanent Marker', cursive;
-   color: white;
-   text-align: center;
-   float: left;
-   background-color: rgba(255, 255, 255,0);
-   margin-left: 200px;
- }
- div.net {
-   background-image: url(../images/handmeh.png);
-   background-size: cover;
- }
+#gameOver:hover {
+ cursor: pointer;
+}
 
 #right {
+  background-image: url(../images/rightArrow.png);
+  background-size: cover;
   float: right;
   width: 100px;
-  height: 300px;
-  font-size: 50px;
+  height: 100px;
 }
+
 #left {
+  background-image: url(../images/leftArrow.png);
+  background-size: cover;
   float: left;
   width: 100px;
-  height: 300px;
-  font-size: 50px;
+  height: 100px;
 }
 
-div.lives.ringing {
-  animation: shake 0.5s infinite;
-}
-
-@keyframes shake {
-  10%, 90% {
-    transform: translateX(-1px);
-  }
-
-  20%, 80% {
-    transform: translateX(2px);
-  }
-
-  30%, 50%, 70% {
-    transform: translateX(-4px);
-  }
-
-  40%, 60% {
-    transform: translateX(4px);
-  }
-}
 /*mobile corrections*/
 /*@media screen
   and (device-width: 320px)
@@ -185,8 +175,9 @@ div.lives.ringing {
     button#play {
       margin-left: 17px;
     }
-    section {
-
+    article{
+      height: 600px;
     }
+
 
 }*/
