@@ -55,6 +55,9 @@ rain.checkCatch = function checkCatch() {
       this.score = this.score+1;
       this.$caught.play();
       this.$score.text(this.score);
+      if (this.score === 50){
+        rain.$woohoo.play();
+      }
       break;
 //----------------------- if not take a life away ------------------------------
     case false:
@@ -67,6 +70,7 @@ rain.checkCatch = function checkCatch() {
 rain.setup = function() {
   console.log('all working boss');
   rain.$body = $('body');
+  rain.$woohoo = $('#woohoo').get(0);
   rain.divNumber = null;
   rain.className = null;
   rain.$gameOver = $('.gameOver');
@@ -110,6 +114,7 @@ rain.setup = function() {
     this.$section.show();
     this.$divs.show();
     this.$score.show();
+    this.$score.html(this.score);
     this.$play.hide();
     this.$right.show();
     this.$left.show();
