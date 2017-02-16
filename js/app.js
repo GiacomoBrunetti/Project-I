@@ -10,11 +10,12 @@ rain.generateAnimal = function generateAnimal() {
 
   //------------------------ Make the animal fall -------------------------------
 rain.fallOne = function fallOne() {
+  let timerId = null;
   if (this.livesNumber.length>0) {
     if (this.falltime>= 100){
       this.falltime--;
     }
-    setTimeout(() => {
+    timerId = setTimeout(() => {
       if (this.divNumber <= 41) {
         if (this.className==='cat'){
           $(`.box${this.divNumber}`).removeClass('cat');
@@ -35,6 +36,7 @@ rain.fallOne = function fallOne() {
     }, this.falltime);
 //---------------------------- if you run out of lives ----------------------------
   } else {
+    clearTimeout(timerId);
     ($(`.box${this.divNumber}`).removeClass('cat dog'));
     this.$gameOver.show();
     this.$playAgain.show();
@@ -43,9 +45,12 @@ rain.fallOne = function fallOne() {
     this.$divs.hide();
     this.$portal.show();
     this.$pug.show();
+    const width = this.$body.width();
     this.$pug.animate({
-      marginLeft: '+=1700px'
-    }, 6000);
+      marginLeft: '+='+(width-100).toString()+'px'
+    }, 6000, () => {
+      this.$pug.hide();
+    });
   }
 };
 //------------------------ chech if you caught an animal---------------------
@@ -55,7 +60,7 @@ rain.checkCatch = function checkCatch() {
       this.score = this.score+1;
       this.$caught.play();
       this.$score.text(this.score);
-      if (this.score === 50){
+      if (this.score % 50 === 0){
         rain.$woohoo.play();
       }
       break;
