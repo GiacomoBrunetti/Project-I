@@ -98,23 +98,24 @@ div.cat {
 }
 
 div.dog {
-  background-image: url(../images/doneDog.gif);
-  background-size: contain;
-  background-repeat: no-repeat;
+  background-image: url(../images/fallingPug2.gif);
+  background-size: cover;
 }
 
 footer {
+  margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
+  height: 50px;
 }
 div.lives {
- background-color: rgba(255, 255, 255,0);
- color: red;
- text-align: center;
- width: auto;
- font-size: 50px;
- bottom: 50px;
- margin: 0 auto;
+  background-color: rgba(255, 255, 255,0);
+  color: red;
+  text-align: center;
+  width: auto;
+  font-size: 50px;
+  bottom: 50px;
+  margin: 0 auto;
 }
 
 div.score {
@@ -148,6 +149,22 @@ div.net {
   float: left;
   width: 100px;
   height: 100px;
+}
+
+span {
+  height: 50px;
+  width: 50px;
+}
+
+.pug{
+  background-image: url(../images/runningPug.gif);
+  background-size: cover;
+  float: left;
+}
+.portal {
+  background-image: url(../images/vertPortal.gif);
+  background-size: cover;
+  float: left;
 }
 
 /*mobile corrections*/

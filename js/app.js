@@ -16,10 +16,12 @@ $(() => {
   const $playAgain = $('#playAgain');
   const $left = $('#left');
   const $right = $('#right');
+  const $pug = $('.pug');
+  const $portal = $('.portal');
   let score = 0;
   let g = 1;
   let falltime = 250;
-  const livesNumber = ['&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;'];
+  let livesNumber = ['&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;'];
   let x = 0;
   console.log(livesNumber.length);
 
@@ -41,6 +43,8 @@ $(() => {
 
   $lives.html(livesNumber);
   $gameOver.hide();
+  $pug.hide();
+  $portal.hide();
   $section.hide();
   $divs.hide();
   $score.hide();
@@ -59,8 +63,8 @@ $(() => {
     $right.show();
     $left.show();
     $stopTrack.hide();
-  });
-  $play.on('click', () => {
+    $article.show();
+    $lives.html(livesNumber);
     generateAnimal();
     fallOne();
   });
@@ -110,6 +114,7 @@ $(() => {
   function generateAnimal() {
     divNumber = Math.floor(Math.random()*6);
     className = Math.random() > 0.5 ? 'cat' : 'dog';
+    console.log(divNumber, className);
     $(`.box${divNumber}`).addClass(className);
   }
 
@@ -145,6 +150,11 @@ $(() => {
       $article.hide();
       $section.hide();
       $divs.hide();
+      $portal.show();
+      $pug.show();
+      $pug.animate({
+        marginLeft: '+=1700px'
+      }, 6000);
     }
   }
 
@@ -163,17 +173,14 @@ $(() => {
   }
 
   $playAgain.on('click', () => {
-    console.log('click');
-    $section.show();
-    $divs.show();
-    $score.show();
-    $play.hide();
-    $right.show();
-    $left.show();
-    $stopTrack.hide();
+    livesNumber = ['&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;','&hearts;'];
+    falltime = 250;
+    score = 0;
+    $play.show();
+    $stopTrack.show();
     $gameOver.hide();
     $playAgain.hide();
-    generateAnimal();
-    fallOne();
+    $portal.hide();
+    $pug.stop().removeAttr('style').hide();
   });
 });
