@@ -24,13 +24,17 @@ Sounds are triggered upon:
 1. the page loading
 2. saving an animal
 3. losing an animal
-4. reaching a score of 50 
+4. every 50 points
 
 ![game over](./images/ScreenShot4.png)
 
 ## Built With
 
 Built using HTML5, CSS3, and ES6.
+
+## Future Features 
+
+I would like to add a database with all the scores of all the players, replace the two buttons on desktop version with, on the left, a scoreboard with the top scores, and on the right, display the player's personal highscore. 
 
 ## Challenges 
 The main problem with this project has been CSS, something that I would have never thought could be this hard. Trying to make it responsive has taken a lot longer than what I originally planned and it still is not perfectly responsive.
