@@ -68,12 +68,12 @@ a:hover {
 }
 article {
   text-align: center;
-  height: 450px;
+  height: 500px;
   width: auto;
-  /*position: relative;*/
+  position: relative;
 }
 section {
-  margin-top: 150px;
+  margin-top: 100px;
   background-color: rgba(255, 255, 255,0);
   margin-bottom: 10px;
   height: 410px;
@@ -190,7 +190,7 @@ span {
       margin: 80px;
     }
     article{
-      height: 200%;
+      height: 700px;
     }
     section {
       top: 70%;
