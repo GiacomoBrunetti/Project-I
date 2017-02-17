@@ -203,10 +203,12 @@ span {
     #right {
       width: 25px;
       height: 25px;
+      margin-bottom: 20px;
     }
     #left {
       width: 25px;
       height: 25px;
+      margin-bottom: 20px
     }
     div.lives {
       font-size: 30px;
