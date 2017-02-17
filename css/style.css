@@ -193,6 +193,7 @@ span {
       height: 700px;
     }
     section {
+      margin-top: 20px;
       top: 70%;
     }
     button#playAgain{
