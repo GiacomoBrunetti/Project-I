@@ -1,6 +1,6 @@
 # Project-I: It's raining Cats and Dogs!
 
-A very basic yet addiciting game where you have to save from an unavoidable end cats and dogs falling from the sky!
+A very basic yet addicting game where you have to save from an unavoidable end cats and dogs falling from the sky!
 
 ![home](./images/ScreenShot.png)
 
