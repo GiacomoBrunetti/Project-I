@@ -2,6 +2,8 @@
 
 A very basic yet addicting game where you have to save from an unavoidable end cats and dogs falling from the sky!
 
+Play here! https://blooming-ocean-54554.herokuapp.com/
+
 ![home](./images/ScreenShot.png)
 
 ## How to play 
